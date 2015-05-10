@@ -1,0 +1,21 @@
+I am also new to Kaggle and I'm getting similar results. Here are things that I noticed:
+
+I'm using an svm btw. C isn't changing my f1 or accuracy very much, but I have it around 3 right now.
+
+1.) I got better results when I kept Pclass in one variable, rather than splitting into three, That is odd-ish to me, but perhaps simple models are better in this case where we don't have a lot of training data.
+
+2.) I got better results when I combined SibSp and Parch by adding them together
+
+3.) I got better results by squaring the ticket price
+
+4.) Feature normalization helps your SVM if you're using a Gaussian/RBF kernel (default in sklearn)
+
+
+I've tried lots of more complicated features, none of which improved my f1 or accuracy siginificantly, most of which just hurt it. Currently sitting at 0.76 f1 and 0.83 accuracy using an SVM, which translates to around 0.74 on the leaderboards for me. I also tried Gradient Boosting, but it had about exactly the same performance. I think features, and not the algorithm, have the largest impact on how well the classifier does.
+
+Honestly, I think that people doing much better than this are doing the following things:
+
+
+1.) Cleaning the data like a boss. I suspect there are some errors in the data that can be corrected for a better model.
+
+2.) 
